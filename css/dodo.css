@@ -1,0 +1,50 @@
+.dodoCharacter {
+  --size: 220px;
+  --eye-left-x: 43%;
+  --eye-right-x: 59%;
+  --eye-y: 52%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--size);
+  height: var(--size);
+  isolation: isolate;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.dodoCharacter[data-state="notice"] { --eye-left-x: 43%; --eye-right-x: 59%; --eye-y: 52%; }
+.dodoCharacter[data-state="urgent"] { --eye-left-x: 41%; --eye-right-x: 58%; --eye-y: 52%; }
+.dodoCharacter[data-state="danger"] { --eye-left-x: 46%; --eye-right-x: 63%; --eye-y: 56%; }
+.dodoCharacter[data-state="done"] { --eye-left-x: 43%; --eye-right-x: 59%; --eye-y: 53%; }
+.dodoPose { position: absolute; z-index: 2; inset: 0; transform-origin: 50% 78%; will-change: transform; }
+.dodoShadow { position: absolute; z-index: 0; bottom: 8%; left: 50%; width: 46%; height: 8%; transform: translateX(-50%); border-radius: 50%; background: rgba(42,67,83,.14); filter: blur(calc(var(--size) * .025)); will-change: transform, opacity; }
+.dodoSprite { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none; image-rendering: auto; }
+.dodoSprite.alt { opacity: 0; }
+.dodoFaceFx, .dodoFxLayer { position: absolute; z-index: 4; inset: 0; pointer-events: none; }
+.dodoFxLayer { z-index: 5; }
+.blinkPatch { position: absolute; top: var(--eye-y); left: 51%; width: 37%; height: 19%; transform: translate(-50%, -50%); opacity: 0; }
+.blinkPatch::before, .blinkPatch::after { position: absolute; top: 25%; width: 34%; height: 66%; border-radius: 50%; background: radial-gradient(ellipse at center, #fffdfb 35%, #fff9f7 62%, rgba(255,249,247,0) 78%); content: ""; }
+.blinkPatch::before { left: 0; }
+.blinkPatch::after { right: 0; }
+.blinkPatch i::before, .blinkPatch i::after { position: absolute; z-index: 2; top: 55%; width: 24%; height: 3px; border-radius: 99px; background: #1c191b; content: ""; }
+.blinkPatch i::before { left: 7%; transform: rotate(3deg); }
+.blinkPatch i::after { right: 7%; transform: rotate(-3deg); }
+.eyeGlint { position: absolute; top: var(--eye-y); width: calc(var(--size) * .021); height: calc(var(--size) * .031); transform: translate(-50%, -50%); border-radius: 50%; background: rgba(255,255,255,.88); box-shadow: 0 0 2px rgba(255,255,255,.55); opacity: .78; will-change: transform, opacity; }
+.eyeGlint.left { left: var(--eye-left-x); }
+.eyeGlint.right { left: var(--eye-right-x); }
+.dodoCharacter[data-state="done"] .eyeGlint { display: none; }
+.fxDot { position: absolute; opacity: 0; font-size: calc(var(--size) * .105); font-style: normal; font-weight: 900; will-change: transform, opacity; }
+.fxDot.a { top: 29%; left: 11%; }
+.fxDot.b { top: 24%; right: 9%; }
+.fxDot.c { right: 15%; bottom: 24%; }
+.dodoCharacter.interactive { cursor: pointer; }
+.dodoCharacter.interactive:active { filter: brightness(.99); }
+.dodoCharacter[data-emotion="curious"] .eyeGlint { width: calc(var(--size) * .018); transform: translate(-50%, -60%); }
+.dodoCharacter[data-emotion="surprised"] .eyeGlint { width: calc(var(--size) * .026); height: calc(var(--size) * .038); opacity: 1; }
+.dodoCharacter[data-emotion="sleepy"] .eyeGlint { opacity: .28; }
+.dodoCharacter[data-emotion="determined"] .eyeGlint { transform: translate(-50%, -45%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .dodoPose, .dodoShadow, .eyeGlint, .fxDot { will-change: auto; }
+}

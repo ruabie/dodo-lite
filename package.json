@@ -1,0 +1,15 @@
+{
+  "name": "dodo-v54-pwa",
+  "version": "5.4.0",
+  "private": true,
+  "description": "Dodo mobile experience PWA",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "node --check js/storage.js && node --check js/urgency-engine.js && node --check js/character-engine.js && node --check js/notification-manager.js && node --check js/app.js && node --check sw.js && node --check server/server.js && node --check server/reminder-policy.js",
+    "test:browser": "node tests/browser-smoke.js",
+    "test:server": "node tests/server-smoke.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

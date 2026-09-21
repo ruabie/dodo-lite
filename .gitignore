@@ -1,0 +1,8 @@
+node_modules/
+server/node_modules/
+server/data/
+server/.env
+tests/.push-server-smoke-data/
+.chrome-*/
+.edge-*/
+*.zip
