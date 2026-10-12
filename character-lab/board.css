@@ -1,0 +1,254 @@
+:root {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC",
+    sans-serif;
+  color: #27352f;
+  background: #f7f5ee;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.board {
+  max-width: 1160px;
+  margin: auto;
+  padding: 48px clamp(18px, 5vw, 56px) 80px;
+}
+.eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: #58977a;
+  margin: 0 0 18px;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h1 {
+  font-size: clamp(40px, 6vw, 76px);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+  max-width: 850px;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: clamp(26px, 3vw, 36px);
+  letter-spacing: -0.035em;
+  margin-bottom: 12px;
+}
+h3 {
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+.intro {
+  max-width: 600px;
+  line-height: 1.75;
+  color: #5f6e65;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 26px 0 38px;
+}
+.tags span {
+  background: #e7eee6;
+  border: 1px solid #d8e6d7;
+  border-radius: 99px;
+  padding: 7px 12px;
+  font-size: 12px;
+  color: #486451;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 1.1fr) minmax(270px, 0.9fr);
+  gap: 44px;
+  align-items: center;
+  background: #ecf2e9;
+  border-radius: 28px;
+  padding: clamp(22px, 4vw, 48px);
+  margin: 0 0 78px;
+}
+.hero-art {
+  position: relative;
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  background: #f9f9f5;
+  border-radius: 22px;
+  overflow: hidden;
+}
+.hero-art:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  border-left: 1px dashed #d1ddd0;
+}
+.hero-character {
+  position: relative;
+  width: min(100%, 360px);
+  z-index: 1;
+}
+.hero-character svg {
+  display: block;
+  width: 100%;
+}
+.baseline {
+  position: absolute;
+  bottom: 20px;
+  right: 22px;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: #83a095;
+}
+.hero-copy p:not(.eyebrow) {
+  line-height: 1.8;
+  color: #627168;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin: 26px 0 0;
+}
+.metrics div {
+  border-top: 1px solid #cedbcb;
+  padding-top: 9px;
+}
+.metrics dt {
+  font-size: 11px;
+  color: #829185;
+}
+.metrics dd {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 4px 0 0;
+}
+.section-title {
+  margin: 0 0 24px;
+}
+.section-title p:last-child {
+  color: #718076;
+  font-size: 14px;
+}
+.board section:not(.hero-grid) {
+  margin-bottom: 76px;
+}
+.card-grid {
+  display: grid;
+  gap: 12px;
+}
+.views {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.emotions,
+.poses {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.character-card {
+  background: #fffdfa;
+  border: 1px solid #edece5;
+  border-radius: 18px;
+  padding: 10px 14px 16px;
+  min-width: 0;
+}
+.character-card .art {
+  height: 205px;
+  display: grid;
+  place-items: center;
+  background: #faf9f4;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.character-card svg {
+  height: 100%;
+  width: 100%;
+  max-width: 205px;
+}
+.character-card h3 {
+  margin: 0 0 4px;
+}
+.character-card p {
+  color: #7c887e;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0;
+}
+.rule-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.rule-grid article {
+  background: #e8eee6;
+  padding: 22px;
+  border-radius: 16px;
+}
+.rule-grid p:last-child {
+  font-size: 13px;
+  line-height: 1.75;
+  color: #65756b;
+}
+.rule-grid .eyebrow {
+  margin-bottom: 12px;
+}
+footer {
+  border-top: 1px solid #dddcd2;
+  padding-top: 20px;
+  color: #8a9288;
+  font-size: 12px;
+}
+code {
+  font-family: ui-monospace, monospace;
+}
+@media (max-width: 720px) {
+  .board {
+    padding-top: 28px;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-bottom: 54px;
+  }
+  .hero-art {
+    min-height: 300px;
+  }
+  .hero-character {
+    width: min(100%, 320px);
+  }
+  .views,
+  .emotions,
+  .poses {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .character-card {
+    padding: 8px 8px 12px;
+  }
+  .character-card .art {
+    height: 150px;
+  }
+  .character-card h3 {
+    font-size: 14px;
+  }
+  .character-card p {
+    font-size: 11px;
+  }
+  .rule-grid {
+    grid-template-columns: 1fr;
+  }
+  .board section:not(.hero-grid) {
+    margin-bottom: 54px;
+  }
+}
+@media (max-width: 350px) {
+  .character-card .art {
+    height: 128px;
+  }
+}

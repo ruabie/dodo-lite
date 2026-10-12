@@ -1,0 +1,51 @@
+.dodoCharacter {
+  --size: 220px;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  display: block;
+  isolation: isolate;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  contain: layout paint style;
+}
+.dodoCharacter.interactive {
+  cursor: pointer;
+}
+.dodoCharacter.interactive:focus-visible {
+  outline: 2px solid #369b70;
+  outline-offset: 3px;
+  border-radius: 22%;
+}
+.xiaodai-rig-host,
+.xiaodai-rig-host svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.xiaodai-rig-host svg {
+  overflow: visible;
+  shape-rendering: geometricPrecision;
+}
+.dodoCharacter[data-idle-enabled="true"] .xd-body,
+.dodoCharacter[data-idle-enabled="true"] .xd-note {
+  will-change: transform;
+}
+.dodoCharacter:not([data-action="idle"]) .xd-arm,
+.dodoCharacter:not([data-action="idle"]) .xd-foot,
+.dodoCharacter:not([data-action="idle"]) .xd-shadow {
+  will-change: transform;
+}
+.labLink {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .xiaodai-rig-host * {
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+}

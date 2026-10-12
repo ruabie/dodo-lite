@@ -12,14 +12,15 @@
   <link rel="apple-touch-icon" href="./dodo-v53-icon-192.png">
   <link rel="stylesheet" href="./css/app.css">
   <link rel="stylesheet" href="./css/dodo.css">
-  <title>小待 Dodo V5.4</title>
+  <link rel="stylesheet" href="./css/xiaodai.css">
+  <title>小待 Dodo V5.5</title>
 </head>
 <body>
   <div id="app">
     <header class="header">
       <div class="brand">
         <div id="brandDodo" aria-hidden="true"></div>
-        <div class="brandTitle">小待 <small>Dodo V5.4</small></div>
+        <div class="brandTitle">小待 <small>Dodo V5.5</small></div>
       </div>
       <button class="roundBtn" id="addTask" type="button" aria-label="新建任务">＋</button>
     </header>
@@ -55,8 +56,8 @@
         </div>
 
         <div class="settingCard padded">
-          <strong>CharacterAnimationEngine V5.4</strong>
-          <div class="meta settingLead">五张 3D 母版保持不变；STATE、EMOTION、ACTION 完全分离。</div>
+          <strong>小待 · 分层角色系统</strong>
+          <div class="meta settingLead">可编辑 SVG Rig；业务 STATE、持续情绪和临时表演分离。</div>
           <div class="charGrid" id="charButtons" aria-label="角色状态测试"></div>
           <div class="previewBox"><div id="charPreview"></div></div>
           <div class="engineLog" aria-live="polite">
@@ -65,6 +66,7 @@
             <div class="logRow"><span>ACTION</span><strong id="engineAction">idle</strong></div>
           </div>
           <p class="microCopy">连续点击只会改变当前状态内的表情和动作，不会切换 STATE。</p>
+          <a class="secondary wide spaced labLink" href="./character-lab/index.html">打开角色实验室 ↗</a>
         </div>
 
         <div class="settingCard padded" id="notificationCard">
@@ -159,7 +161,11 @@
 
   <script src="./js/storage.js" defer></script>
   <script src="./js/urgency-engine.js" defer></script>
-  <script src="./js/character-engine.js" defer></script>
+  <script src="./js/xiaodai-art.js" defer></script>
+  <script src="./js/xiaodai-rig.js" defer></script>
+  <script src="./js/xiaodai-motion.js" defer></script>
+  <script src="./js/xiaodai-idle.js" defer></script>
+  <script src="./js/xiaodai-character.js" defer></script>
   <script src="./js/notification-manager.js" defer></script>
   <script src="./js/app.js" defer></script>
 </body>

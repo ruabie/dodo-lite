@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f7f3">
+  <title>小待 · 角色实验室</title>
+  <link rel="stylesheet" href="../css/xiaodai.css">
+  <link rel="stylesheet" href="lab.css">
+</head>
+<body>
+  <main class="lab-shell">
+    <header><a href="../index.html" class="back">← 返回小待</a><span class="edition">XIAODAI CHARACTER LAB / 01</span></header>
+    <h1>让小待，<br>活在此刻。</h1>
+    <p class="lede">观察一次眼神、一次预备和一次落地。触碰角色，让它先注意到你，再给出回应。</p>
+
+    <section class="stage-panel" aria-label="角色实时预览">
+      <div id="stage" class="stage background-cream">
+        <div id="character" class="character-mount"></div>
+        <div class="stage-hint">点击角色 · 或移动手指 / 鼠标试试眼神</div>
+      </div>
+      <div class="stage-tools">
+        <div class="tool-group" aria-label="预览背景"><span>背景</span><button data-background="cream" class="selected">米白</button><button data-background="dark">深色</button><button data-background="mint">薄荷</button></div>
+        <div class="tool-group" aria-label="角色尺寸"><span>尺寸</span><button data-size="120">小</button><button data-size="220" class="selected">中</button><button data-size="300">大</button></div>
+      </div>
+    </section>
+
+    <div class="control-grid">
+      <section class="panel"><div class="panel-heading"><span>01 / EMOTION</span><h2>持续情绪</h2></div><div id="emotions" class="choice-grid"></div></section>
+      <section class="panel"><div class="panel-heading"><span>02 / ACTION</span><h2>临时表演</h2></div><div id="actions" class="choice-grid"></div></section>
+      <section class="panel"><div class="panel-heading"><span>03 / TUNING</span><h2>节奏与触感</h2></div>
+        <label class="switch-line"><span>随机待机</span><input id="idleToggle" type="checkbox" checked></label>
+        <label class="switch-line"><span>触摸 / 鼠标视线跟随</span><input id="gazeToggle" type="checkbox" checked></label>
+        <label class="switch-line"><span>锚点调试</span><input id="anchorToggle" type="checkbox"></label>
+        <label class="range-line"><span>动作速度 <output id="speedValue">1.00×</output></span><input id="speed" type="range" min="0.5" max="1.7" step="0.05" value="1"></label>
+        <label class="range-line"><span>弹性强度 <output id="elasticityValue">1.00×</output></span><input id="elasticity" type="range" min="0" max="1.8" step="0.05" value="1"></label>
+      </section>
+      <section class="panel state-panel"><div class="panel-heading"><span>04 / LIVE STATE</span><h2>当前角色状态</h2></div>
+        <dl><div><dt>STATE</dt><dd id="stateValue">calm</dd></div><div><dt>EMOTION</dt><dd id="emotionValue">neutral</dd></div><div><dt>ACTION</dt><dd id="actionValue">idle</dd></div><div><dt>GAZE</dt><dd id="gazeValue">0.0 / 0.0</dd></div><div><dt>IDLE</dt><dd id="idleValue">on</dd></div></dl>
+        <button id="reset" class="reset" type="button">重置角色</button>
+        <a href="design-board.html" class="board-link">查看静态角色设定板 ↗</a>
+      </section>
+    </div>
+    <p class="footnote">实验室仅控制角色层，不改变提醒任务的 STATE 或数据。系统开启“减少动态效果”时将简化动作。</p>
+  </main>
+  <script src="../js/xiaodai-art.js"></script>
+  <script src="../js/xiaodai-rig.js"></script>
+  <script src="../js/xiaodai-motion.js"></script>
+  <script src="../js/xiaodai-idle.js"></script>
+  <script src="../js/xiaodai-character.js"></script>
+  <script src="lab.js"></script>
+</body>
+</html>

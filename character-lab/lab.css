@@ -1,0 +1,247 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  color: #25372f;
+  background: #f6f7f3;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.lab-shell {
+  max-width: 980px;
+  margin: auto;
+  padding: 25px clamp(18px, 4vw, 42px) 70px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.back {
+  color: #2e8d67;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+.edition,
+.panel-heading span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #82a592;
+}
+h1 {
+  font-size: clamp(44px, 7vw, 76px);
+  letter-spacing: -0.065em;
+  line-height: 1.04;
+  margin: 42px 0 14px;
+}
+.lede {
+  max-width: 550px;
+  line-height: 1.7;
+  color: #718076;
+  margin: 0 0 30px;
+}
+.stage-panel {
+  background: #fff;
+  border: 1px solid #e8eee7;
+  border-radius: 25px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+.stage {
+  height: 400px;
+  border-radius: 17px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  transition: background-color 0.2s;
+}
+.stage.background-cream {
+  background: #f8f6ed;
+}
+.stage.background-dark {
+  background: #31423d;
+}
+.stage.background-mint {
+  background: #e7f6ee;
+}
+.stage .character-mount {
+  z-index: 1;
+}
+.stage-hint {
+  position: absolute;
+  bottom: 17px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #899990;
+  font-size: 12px;
+  pointer-events: none;
+}
+.background-dark .stage-hint {
+  color: #c8ded0;
+}
+.stage-tools {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 15px 4px 4px;
+}
+.tool-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.tool-group span {
+  color: #87978c;
+  font-size: 12px;
+  margin-right: 5px;
+}
+.tool-group button,
+.choice-grid button,
+.reset {
+  font: inherit;
+  border: 1px solid #dce9df;
+  background: #f5f9f5;
+  color: #416752;
+  border-radius: 11px;
+  padding: 9px 13px;
+  cursor: pointer;
+}
+.tool-group button.selected,
+.choice-grid button.selected {
+  background: #d6eee0;
+  color: #216c4b;
+  border-color: #a8d5b8;
+}
+.control-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.panel {
+  background: #fff;
+  border: 1px solid #e8eee7;
+  border-radius: 22px;
+  padding: 24px;
+  min-width: 0;
+}
+.panel-heading {
+  margin-bottom: 18px;
+}
+.panel-heading h2 {
+  font-size: 25px;
+  letter-spacing: -0.035em;
+  margin: 6px 0 0;
+}
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.choice-grid button {
+  min-height: 46px;
+  padding: 8px 5px;
+  font-size: 13px;
+}
+.switch-line,
+.range-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid #edf1ec;
+  font-size: 14px;
+}
+.switch-line input {
+  width: 20px;
+  height: 20px;
+  accent-color: #39a374;
+}
+.range-line {
+  display: block;
+}
+.range-line span {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.range-line output {
+  font-variant-numeric: tabular-nums;
+  color: #2e906b;
+}
+.range-line input {
+  width: 100%;
+  accent-color: #39a374;
+}
+.state-panel dl {
+  margin: 0;
+}
+.state-panel dl div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #edf1ec;
+  padding: 10px 0;
+  font-size: 13px;
+}
+.state-panel dt {
+  color: #84968a;
+}
+.state-panel dd {
+  margin: 0;
+  font-family: ui-monospace, monospace;
+  color: #2a7654;
+}
+.reset {
+  display: block;
+  background: #348f68;
+  color: #fff;
+  border-color: #348f68;
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+}
+.board-link {
+  display: block;
+  text-align: center;
+  color: #469975;
+  margin-top: 19px;
+  text-decoration: none;
+  font-size: 13px;
+}
+.footnote {
+  color: #8f9d91;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 25px 5px 0;
+}
+@media (max-width: 650px) {
+  .lab-shell {
+    padding-top: 17px;
+  }
+  h1 {
+    margin-top: 34px;
+  }
+  .stage {
+    height: 345px;
+  }
+  .control-grid {
+    grid-template-columns: 1fr;
+  }
+  .panel {
+    padding: 20px;
+  }
+  .stage-tools {
+    gap: 12px;
+  }
+  .tool-group button {
+    padding: 7px 10px;
+  }
+}

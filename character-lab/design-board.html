@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f5ee">
+  <title>小待 · 角色设定板</title>
+  <link rel="stylesheet" href="board.css">
+</head>
+<body>
+  <main class="board">
+    <header class="masthead">
+      <p class="eyebrow">XIAODAI / CHARACTER SYSTEM 01</p>
+      <h1>小待，不只是会动的图。</h1>
+      <p class="intro">一只认真守护你时间的白色柔软团子。先固定造型与各视角，再让动作从同一副骨架里自然长出来。</p>
+      <div class="tags"><span>两只手 · 两只脚</span><span>头顶便签</span><span>任何视角都无尾巴</span><span>雾面色彩与克制线条</span></div>
+    </header>
+
+    <section class="hero-grid" aria-labelledby="standard-heading">
+      <div class="hero-art"><div id="hero-character" class="hero-character"></div><span class="baseline">GROUND · y 241</span></div>
+      <div class="hero-copy">
+        <p class="eyebrow">01 / CANONICAL SILHOUETTE</p>
+        <h2 id="standard-heading">正面标准姿态</h2>
+        <p>上窄下稳的柔软白色轮廓，脸是身体的一部分，不另贴一个头。便签像被轻轻夹住的提醒，不是皇冠。手从两侧肩点长出，脚落在同一地线上。</p>
+        <dl class="metrics"><div><dt>画布</dt><dd>256 × 256</dd></div><div><dt>身体</dt><dd>x 42–214 / y 91–228</dd></div><div><dt>眼距</dt><dd>46 单位</dd></div><div><dt>接地</dt><dd>脚 y 225 / 阴影 y 241</dd></div></dl>
+      </div>
+    </section>
+
+    <section aria-labelledby="views-heading">
+      <div class="section-title"><p class="eyebrow">02 / TURNAROUND</p><h2 id="views-heading">六个视角，一套身份</h2><p>三分之四与侧面由独立轮廓绘制；不是镜像压扁正面。</p></div>
+      <div id="views" class="card-grid views"></div>
+    </section>
+
+    <section aria-labelledby="emotions-heading">
+      <div class="section-title"><p class="eyebrow">03 / FACE LANGUAGE</p><h2 id="emotions-heading">表情从眼神开始</h2><p>眼形、眼皮、瞳孔、眉弧与嘴同时参与，缩到手机卡片仍可辨认。</p></div>
+      <div id="emotions" class="card-grid emotions"></div>
+    </section>
+
+    <section aria-labelledby="poses-heading">
+      <div class="section-title"><p class="eyebrow">04 / KEY POSES</p><h2 id="poses-heading">八个有意图的姿势</h2><p>先看关键姿势是否清楚。阶段 D 才把姿势连接成有预备、超调和恢复的动作。</p></div>
+      <div id="poses" class="card-grid poses"></div>
+    </section>
+
+    <section class="rule-grid" aria-label="角色绘制约束">
+      <article><p class="eyebrow">ANCHORS</p><h3>共同坐标</h3><p>肩 (62,164) / (194,164)；眼 (105,150) / (151,150)；便签 (128,97)；脚 (91,224) / (165,224)。局部动作以这些点为轴。</p></article>
+      <article><p class="eyebrow">OCCLUSION</p><h3>前后关系</h3><p>阴影 → 双脚 → 远手 → 身体 → 近手 → 面部 → 便签。背面只保留身体、四肢与便签背面，不画眼或嘴。</p></article>
+      <article><p class="eyebrow">NO TAIL</p><h3>背面与侧面</h3><p>臀部保持连续圆弧；任何手脚、装饰或影子都不得从后下方形成尾状突出。较大转身只换正式视角造型。</p></article>
+    </section>
+    <footer>设计板是静态验收基准。打开 <code>/character-lab/design-board.html</code> 即可独立检查，不影响提醒 App。</footer>
+  </main>
+  <script src="../js/xiaodai-art.js"></script>
+  <script src="board.js"></script>
+</body>
+</html>

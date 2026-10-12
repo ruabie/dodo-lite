@@ -1,6 +1,6 @@
-# 小待 Dodo V5.4 手机体验版
+# 小待 Dodo · SVG 角色实验版
 
-这是基于 Dodo V5.3 继续升级的 PWA 手机体验版。Now、Today、Focus、Settings、Danger、Done、灵动岛视觉模拟、本地任务和通知入口均保留；角色继续使用原项目的五张 1024×1024 3D 母版素材。
+这是从 Dodo V5.4 PWA 基准继续升级的手机体验版。Now、Today、Focus、Settings、Danger、Done、灵动岛视觉模拟、本地任务和通知入口均保留；角色展示改为原创分层 SVG。旧的五张 1024×1024 PNG 母版仍保存在 `assets/`，但不再是运行时的角色 Rig。
 
 本仓库的 GitHub Pages 前端地址是 <https://ruabie.github.io/dodo-lite/>。Pages 只托管静态前端；`server/` 必须另行部署，不能在 GitHub Pages 上运行。
 
@@ -24,9 +24,9 @@ npm run test:browser
 npm run test:server
 ```
 
-## CharacterAnimationEngine
+## 小待角色系统
 
-角色系统位于 `js/character-engine.js`，页面不直接操作角色内部 DOM。创建角色：
+静态造型、Rig、动作时间轴、Idle 选择和业务接入分别位于 `js/xiaodai-art.js`、`js/xiaodai-rig.js`、`js/xiaodai-motion.js`、`js/xiaodai-idle.js`、`js/xiaodai-character.js`。旧的 `js/character-engine.js` 仅作为基准留存，不再由 `index.html` 加载。页面不直接操作角色 SVG 内部 DOM。创建角色：
 
 ```js
 const character = DodoCharacter({
@@ -37,31 +37,39 @@ const character = DodoCharacter({
   size: 220
 });
 
-character.setState("notice");
+character.setAppContext({ state: "notice" }); // 业务页面传入 Urgency Engine 的计算结果
 character.setEmotion("happy");
-character.play("blink");
-character.play("notification");
-character.lookAt(x, y);
+character.playAction("notice");
+character.playAction("tapReact");
+character.setGazeTarget(clientX, clientY);
+character.setIdleEnabled(false);
+character.setSpeed(1.2);
+character.setElasticity(.8);
+character.setDebugAnchors(true);
 character.resetToIdle();
 ```
 
-三层职责严格分开：
+五层职责分开：
 
-- `STATE`：`calm / notice / urgent / danger / done`，由 Urgency Engine 或设置里的明确状态测试按钮传入。
-- `EMOTION`：当前 STATE 内的短暂表情，例如 `happy / curious / surprised / determined`。
-- `ACTION`：点击、眨眼、观察、提醒、庆祝等短时动作。
+- `STATE`：`calm / notice / urgent / danger / done`，真实业务情境只由 Urgency Engine 计算；设置里的按钮仅修改独立预览角色。
+- `EMOTION`：可持续的角色心情；动作可暂时覆盖，结束后恢复。
+- `ACTION`：局部 Rig 轨道的短时表演，具有动作优先级和从当前数值衔接的打断。
+- `GAZE`：瞳孔目标独立缓动，裁剪在眼睛边界内。
+- `IDLE`：自然眨眼、低幅呼吸与带冷却的非固定间隔微行为。
 
-`play()` 和点击反应不会调用 `setState()`。动作结束后只会回到当前 STATE 的 idle。Idle 使用带权随机调度、随机停顿和特殊动作防连播；页面隐藏时会暂停。
+点击首先触发 `notice`，随后 `tapReact`，最后 `returnToIdle`；任何一步都不调用 `setState()`。连续快速点击只更新视线，不重复堆积动作。支持 `prefers-reduced-motion`；页面隐藏时停止动画帧与 Idle 计时。
+
+独立预览：`/character-lab/index.html` 是交互实验室，`/character-lab/design-board.html` 是静态设定板。后者有六个视角、八种情绪和八个关键姿势；详细造型规则见 `docs/character-spec.md`，旧版问题审查见 `docs/character-audit.md`。实验室只操作独立角色，不读写任务数据。
 
 ## 点击与五个 STATE 的验收
 
-1. 打开“设置”→“CharacterAnimationEngine V5.4”。
+1. 打开“设置”→“小待 · 分层角色系统”，或打开角色实验室。
 2. 点 Calm，再连续点击小待至少 10 次；下方 STATE 必须一直是 `calm`。
-3. 点 Notice 后重复操作；STATE 必须一直是 `notice`，不能出现 Danger 素材。
-4. 依次点 Calm、Notice、Urgent、Danger、Done，按钮、STATE 字段和母版素材必须一一对应。
-5. 停留观察 30 秒：角色应在静止、微动作、停顿和偶发动作间切换，不应出现固定三秒循环。
+3. 点 Notice 后重复操作；STATE 必须一直是 `notice`，不能进入 Danger。
+4. 依次点 Calm、Notice、Urgent、Danger、Done，按钮、STATE 字段和便签图案必须一一对应。
+5. 在角色实验室观察 60 秒：角色应在静止、微动作、停顿和偶发动作间切换，不应出现固定三秒循环。
 
-自动测试也覆盖 Calm/Notice 连续点击、五状态稳定、Idle 特殊动作防连播、数据迁移和 PWA 文件完整性。
+自动测试覆盖状态稳定、五层部件存在、六视角无尾巴、动作轨道、Idle 防连播、任务数据迁移和 PWA 文件完整性；`npm run test:browser` 额外覆盖 390px/320px 手机视口、通知、App 流程与实验室控制。
 
 ## 在 iPhone 添加到主屏幕
 
