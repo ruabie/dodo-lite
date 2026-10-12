@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f6f7f3" />
+    <title>小待 · Performance V2</title>
+    <link rel="stylesheet" href="../css/xiaodai.css" />
+    <link rel="stylesheet" href="performance-v2.css" />
+  </head>
+  <body>
+    <main class="performance-shell">
+      <header class="topbar">
+        <a href="index.html">← 角色实验室</a
+        ><span>INDEPENDENT EXPERIMENT · 02</span>
+      </header>
+      <div class="heading">
+        <p class="eyebrow">XIAODAI / PERFORMANCE V2</p>
+        <h1>从“会动”，到“会表演”。</h1>
+        <p>
+          只检验一件事：当你轻触小待，它先注意、收身，再开心地回应。左边为 V1
+          的原始 Rig 与动作轨道，右边为 V2 的局部轮廓与连续面部控制。
+        </p>
+      </div>
+
+      <section class="compare" aria-label="旧版与新版动作对照">
+        <article class="compare-card">
+          <div class="card-heading">
+            <span>01 / BASELINE</span>
+            <h2>原版本 V1</h2>
+            <p>固定身体路径＋整体缩放，肩部旋转，面部组替换。</p>
+          </div>
+          <div class="stage" id="old-stage">
+            <div id="old-character" class="character-slot"></div>
+          </div>
+          <div class="caption" id="old-caption">旧版原始动作采样</div>
+        </article>
+        <article class="compare-card current">
+          <div class="card-heading">
+            <span>02 / PERFORMANCE V2</span>
+            <h2>新版本 V2</h2>
+            <p>十个局部轮廓点、双段手臂、持续存在的面部节点。</p>
+          </div>
+          <div class="stage" id="new-stage">
+            <div id="new-character" class="character-slot"></div>
+          </div>
+          <div class="caption" id="new-caption">静态姿势 A · 自然站立</div>
+        </article>
+      </section>
+
+      <section class="transport" aria-label="动画时间轴控制">
+        <div class="transport-head">
+          <div>
+            <p class="eyebrow">03 / ANIMATION DESK</p>
+            <h2>逐帧检查表演</h2>
+          </div>
+          <div class="transport-actions">
+            <button id="play" type="button">▶ 同时播放</button
+            ><button id="pause" type="button">暂停</button
+            ><button id="step-back" type="button" aria-label="后退一帧">
+              −1 帧</button
+            ><button id="step-forward" type="button" aria-label="前进一帧">
+              +1 帧
+            </button>
+          </div>
+        </div>
+        <label class="scrub-label" for="scrub"
+          ><span>时间点</span
+          ><output id="time-output">0 / 1200 ms</output></label
+        >
+        <input
+          id="scrub"
+          type="range"
+          min="0"
+          max="1000"
+          step="1"
+          value="0"
+          aria-label="动画时间点"
+        />
+        <div id="milestones" class="milestones"></div>
+        <div class="desk-grid">
+          <div>
+            <h3>分段节奏</h3>
+            <p class="hint">
+              修改后立即改变两个预览的统一播放进度；V1 内部仍保持原动作定义。
+            </p>
+            <div id="phase-controls" class="phase-controls"></div>
+          </div>
+          <div>
+            <h3>检查工具</h3>
+            <label class="range-line"
+              >慢放倍率 <output id="speed-output">1.00×</output
+              ><input
+                id="speed"
+                type="range"
+                min="0.25"
+                max="1.5"
+                value="1"
+                step="0.05"
+            /></label>
+            <label class="check-line"
+              ><input id="debug" type="checkbox" />显示 V1 原始身体路径与 V2
+              轮廓点</label
+            >
+            <label class="check-line"
+              ><input id="reduced" type="checkbox" />静态 /
+              减少动态效果检查</label
+            >
+            <button id="touch-left" class="subtle" type="button">
+              模拟左侧轻触</button
+            ><button id="touch-right" class="subtle" type="button">
+              模拟右侧轻触
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="pose-board" aria-labelledby="pose-heading">
+        <div class="section-heading">
+          <p class="eyebrow">04 / SILHOUETTE TEST</p>
+          <h2 id="pose-heading">五张静态关键姿势</h2>
+          <p>
+            先看完全静止时能否读出“注意 → 预备 → 回应 →
+            收尾”，再评价动画。点击卡片把对应姿势放到右侧大图。
+          </p>
+        </div>
+        <div id="pose-cards" class="pose-cards"></div>
+      </section>
+      <section class="limitations">
+        <p class="eyebrow">ISOLATION</p>
+        <h2>不改提醒功能，也不替换生产角色</h2>
+        <p>
+          本页只加载独立 V2 模块；Now、Today、Focus、Settings、Danger、Done
+          和通知继续使用原角色。对照动作可暂停、拖动时间点或逐帧检查。浏览器开启系统“减少动态效果”时默认不自动播放。
+        </p>
+      </section>
+    </main>
+    <script src="../js/xiaodai-art.js"></script>
+    <script src="../js/xiaodai-rig.js"></script>
+    <script src="../js/xiaodai-motion.js"></script>
+    <script src="../js/xiaodai-performance-v2.js"></script>
+    <script src="performance-v2.js"></script>
+  </body>
+</html>

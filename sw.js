@@ -1,4 +1,4 @@
-const CACHE_NAME = "dodo-xiaodai-rig-v3";
+const CACHE_NAME = "dodo-xiaodai-performance-lab-v4";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -13,6 +13,7 @@ const APP_SHELL = [
   "./js/xiaodai-motion.js",
   "./js/xiaodai-idle.js",
   "./js/xiaodai-character.js",
+  "./js/xiaodai-performance-v2.js",
   "./js/notification-manager.js",
   "./js/app.js",
   "./character-lab/index.html",
@@ -21,6 +22,9 @@ const APP_SHELL = [
   "./character-lab/design-board.html",
   "./character-lab/board.css",
   "./character-lab/board.js",
+  "./character-lab/performance-v2.html",
+  "./character-lab/performance-v2.css",
+  "./character-lab/performance-v2.js",
   "./dodo-v53-icon-192.png",
   "./dodo-v53-icon-512.png",
   "./assets/dodo_calm@2x.png",

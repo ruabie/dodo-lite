@@ -1,5 +1,7 @@
 # 小待 Dodo · SVG 角色实验版
 
+Performance V2 独立单动作对照页：`/character-lab/performance-v2.html`。它在同一页并排比较旧版 `notice → tapReact → returnToIdle` 与新的局部轮廓/连续面部表演，提供五张静态姿势、慢放、逐帧、时间轴调参和路径调试。生产 App 仍使用原角色；架构、复现方式和未解决缺陷见 `docs/performance-v2.md`。
+
 这是从 Dodo V5.4 PWA 基准继续升级的手机体验版。Now、Today、Focus、Settings、Danger、Done、灵动岛视觉模拟、本地任务和通知入口均保留；角色展示改为原创分层 SVG。旧的五张 1024×1024 PNG 母版仍保存在 `assets/`，但不再是运行时的角色 Rig。
 
 本仓库的 GitHub Pages 前端地址是 <https://ruabie.github.io/dodo-lite/>。Pages 只托管静态前端；`server/` 必须另行部署，不能在 GitHub Pages 上运行。

@@ -5,8 +5,9 @@
   "description": "Dodo mobile experience PWA",
   "scripts": {
     "test": "node --test tests/*.test.js",
-    "check": "node --check js/storage.js && node --check js/urgency-engine.js && node --check js/xiaodai-art.js && node --check js/xiaodai-rig.js && node --check js/xiaodai-motion.js && node --check js/xiaodai-idle.js && node --check js/xiaodai-character.js && node --check js/notification-manager.js && node --check js/app.js && node --check sw.js && node --check server/server.js && node --check server/reminder-policy.js",
+    "check": "node --check js/storage.js && node --check js/urgency-engine.js && node --check js/xiaodai-art.js && node --check js/xiaodai-rig.js && node --check js/xiaodai-motion.js && node --check js/xiaodai-idle.js && node --check js/xiaodai-character.js && node --check js/xiaodai-performance-v2.js && node --check character-lab/performance-v2.js && node --check js/notification-manager.js && node --check js/app.js && node --check sw.js && node --check server/server.js && node --check server/reminder-policy.js",
     "test:browser": "node tests/browser-smoke.js",
+    "test:performance": "node tests/performance-v2-browser.js",
     "test:server": "node tests/server-smoke.js"
   },
   "engines": {

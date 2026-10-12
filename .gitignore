@@ -4,5 +4,6 @@ server/data/
 server/.env
 tests/.push-server-smoke-data/
 .chrome-*/
+.qa-smoke-temp/
 .edge-*/
 *.zip

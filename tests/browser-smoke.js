@@ -7,7 +7,7 @@ const path = require("node:path");
 const chromePath = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 const root = path.resolve(__dirname, "..");
 const profile = path.join(root, ".chrome-cdp-smoke");
-const qaDirectory = path.join(root, "qa");
+const qaDirectory = process.env.DODO_QA_DIR ? path.resolve(process.env.DODO_QA_DIR) : path.join(root, "qa");
 const port = 9333;
 const delay = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
 

@@ -24,6 +24,7 @@ test("all manifest and app-shell files exist", () => {
     "js/xiaodai-motion.js", "js/xiaodai-idle.js", "js/xiaodai-character.js", "js/notification-manager.js",
     "character-lab/index.html", "character-lab/lab.css", "character-lab/lab.js",
     "character-lab/design-board.html", "character-lab/board.css", "character-lab/board.js",
+    "character-lab/performance-v2.html", "character-lab/performance-v2.css", "character-lab/performance-v2.js", "js/xiaodai-performance-v2.js",
     "assets/dodo_calm@2x.png", "assets/dodo_notice@2x.png", "assets/dodo_urgent@2x.png",
     "assets/dodo_danger@2x.png", "assets/dodo_done@2x.png"
   ];
