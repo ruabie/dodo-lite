@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f2e9">
+  <title>小待 · 角色美术参考板</title>
+  <style>
+    :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #203039; background: #f5f2e9; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    a { color: #276f58; }
+    main { max-width: 1220px; margin: auto; padding: 28px clamp(16px, 4vw, 48px) 64px; }
+    .eyebrow { margin: 0 0 10px; color: #537365; font-size: .73rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.7rem); line-height: 1.1; letter-spacing: -.04em; }
+    h2 { margin: 0 0 14px; font-size: clamp(1.35rem, 3vw, 2rem); }
+    p { line-height: 1.65; }
+    .intro { max-width: 800px; margin: 18px 0 0; color: #52635d; }
+    .notice { margin: 25px 0 28px; padding: 15px 18px; border-left: 4px solid #67a586; border-radius: 0 12px 12px 0; background: #e9f0e8; font-size: .92rem; }
+    .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin: 32px 0 14px; }
+    .section-heading p { margin: 0; color: #63706b; font-size: .82rem; }
+    .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .card { min-width: 0; overflow: hidden; border: 1px solid #deded5; border-radius: 20px; background: #fffdf8; box-shadow: 0 5px 18px #3a51400b; }
+    .card.current { border-color: #87baa1; background: #f7fbf5; }
+    .art { display: grid; place-items: center; aspect-ratio: 1; margin: 12px; border-radius: 14px; background: #eeece4; }
+    .card.current .art { background: #eaf1e9; }
+    .art img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .art svg { display: block; width: 100%; height: 100%; max-width: 320px; max-height: 320px; }
+    .meta { padding: 1px 17px 17px; }
+    .kind { margin: 0; color: #59816c; font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .meta h3 { margin: 5px 0 5px; font-size: 1.16rem; }
+    .meta p { margin: 6px 0; font-size: .82rem; line-height: 1.48; color: #53635c; }
+    .meta code { overflow-wrap: anywhere; font-size: .75rem; }
+    .traits, .differences { margin-top: 34px; padding: clamp(18px, 3vw, 28px); border: 1px solid #deded5; border-radius: 20px; background: #fffdf8; }
+    .trait-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 24px; }
+    .trait-grid div { border-top: 1px solid #e5e8dd; padding-top: 10px; }
+    .trait-grid dt { font-weight: 750; }
+    .trait-grid dd { margin: 5px 0 0; color: #58665f; line-height: 1.55; font-size: .9rem; }
+    .differences p { margin-bottom: 0; color: #58665f; }
+    footer { margin-top: 28px; color: #65726b; font-size: .83rem; }
+    @media (max-width: 700px) {
+      main { padding-top: 22px; }
+      .section-heading { display: block; }
+      .cards { grid-auto-flow: column; grid-auto-columns: minmax(244px, 82vw); grid-template-columns: none; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; padding-bottom: 12px; scrollbar-color: #a6b8a7 transparent; }
+      .card { scroll-snap-align: start; }
+      .trait-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: no-preference) { .cards { scroll-behavior: smooth; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Xiaodai / Art Archive / 01</p>
+      <h1>小待角色美术参考板</h1>
+      <p class="intro">把仓库中现存的五张历史 PNG 母版，与当前代码里的正面标准造型放在同一背景和尺寸下比较。这里仅展示原有文件，不绘制新角色，也不把代码 SVG 冒充为独立美术母版。</p>
+      <div class="notice">版本说明：五张 PNG 均见于 <strong>V5.3 ZIP → V5.4 仓库基线</strong>；仓库未记录各张图最初的绘制版本。右侧当前正面来自 <strong>V5.5 SVG 角色系统</strong>。历史 PNG 只提供这些正面状态图，缺失的侧面、背面没有补画。</div>
+    </header>
+
+    <section aria-labelledby="compare-title">
+      <div class="section-heading"><h2 id="compare-title">六张原样对照</h2><p>手机上左右滑动查看；图片不裁切、不滤镜、不重绘</p></div>
+      <div class="cards">
+        <article class="card current">
+          <div class="art"><img src="../assets/reference/xiaodai-v55-front.svg" alt="当前 V5.5 小待正面标准站姿：白色团子、双手双脚、绿色嫩芽便签" width="256" height="256"></div>
+          <div class="meta"><p class="kind">当前代码造型快照 · V5.5</p><h3>正面 · Calm / Neutral</h3><p>来源：<a href="../js/xiaodai-art.js">js/xiaodai-art.js</a> 的 <code>front / stand / neutral / calm</code> 原样导出；与 <a href="design-board.html">现有设定板</a> 使用同一造型数据。</p><p>静态 SVG 快照，256 × 256；不是独立绘制的美术母版，也不随运行时代码改变。</p></div>
+        </article>
+        <article class="card"><div class="art"><img src="../assets/dodo_calm@2x.png" alt="历史 Calm 角色母版：白色团子抱着绿色书，头顶嫩芽便签" width="1024" height="1024" decoding="async"></div><div class="meta"><p class="kind">历史 PNG · V5.3 ZIP → V5.4 基线</p><h3>Calm · 平静</h3><p>绿色书本与嫩芽便签；坐姿更饱满，眼睛是大面积黑色椭圆。</p><code>assets/dodo_calm@2x.png</code></div></article>
+        <article class="card"><div class="art"><img src="../assets/dodo_notice@2x.png" alt="历史 Notice 角色母版：小待举手，便签有灯泡，旁边有黄色感叹线" width="1024" height="1024" decoding="async"></div><div class="meta"><p class="kind">历史 PNG · V5.3 ZIP → V5.4 基线</p><h3>Notice · 注意</h3><p>灯泡便签、抬手与黄色注意符号；嘴巴张开。</p><code>assets/dodo_notice@2x.png</code></div></article>
+        <article class="card"><div class="art"><img src="../assets/dodo_urgent@2x.png" alt="历史 Urgent 角色母版：小待拿着橙色时钟，头顶时钟便签，神情担忧" width="1024" height="1024" decoding="async"></div><div class="meta"><p class="kind">历史 PNG · V5.3 ZIP → V5.4 基线</p><h3>Urgent · 紧迫</h3><p>橙色时钟道具、时钟便签与担忧的嘴型。</p><code>assets/dodo_urgent@2x.png</code></div></article>
+        <article class="card"><div class="art"><img src="../assets/dodo_danger@2x.png" alt="历史 Danger 角色母版：红色感叹号便签、皱眉，手持棕色道具" width="1024" height="1024" decoding="async"></div><div class="meta"><p class="kind">历史 PNG · V5.3 ZIP → V5.4 基线</p><h3>Danger · 危险</h3><p>红色双感叹号便签、皱眉与手持道具；道具不是身体或尾巴。</p><code>assets/dodo_danger@2x.png</code></div></article>
+        <article class="card"><div class="art"><img src="../assets/dodo_done@2x.png" alt="历史 Done 角色母版：星星便签、闭眼笑容、双手举起及周围闪光" width="1024" height="1024" decoding="async"></div><div class="meta"><p class="kind">历史 PNG · V5.3 ZIP → V5.4 基线</p><h3>Done · 完成</h3><p>星星便签、闭眼笑容、双手举起和周围闪光。</p><code>assets/dodo_done@2x.png</code></div></article>
+      </div>
+    </section>
+
+    <section class="traits" aria-labelledby="traits-title">
+      <h2 id="traits-title">下一版母版必须保留的身份锚点</h2>
+      <dl class="trait-grid">
+        <div><dt>主体与比例</dt><dd>一体式白色柔软团子，不额外拼头；整体上部略收、下部更稳。当前正面身体约 x 42–214、y 91–228（256 画布），历史 PNG 的坐姿更圆厚；具体比例应以新母版定稿。</dd></div>
+        <div><dt>眼与表情</dt><dd>正面两眼居中偏上，当前眼中心 (105,150) / (151,150)，眼距 46。保留可读的目光与简洁嘴型；历史图的眼更大、更黑。</dd></div>
+        <div><dt>手脚</dt><dd>身体两侧各一只手，底部两只脚，无尾巴。当前正面肩锚点 (62,164) / (194,164)，脚锚点 (91,224) / (165,224)；历史图的肢体更厚、更有体积。</dd></div>
+        <div><dt>便签</dt><dd>顶部中央一张浅奶油色便签，随状态改变图标，不新增身体附件。当前默认是绿色嫩芽；历史五态分别为嫩芽、灯泡、时钟、感叹号、星星。</dd></div>
+        <div><dt>色彩</dt><dd>主身白/暖白，柔和灰边，奶油黄便签，绿色作为平静态识别色，粉色腮红；紧迫与危险态可用橙、红做提示，不改变白色主体。</dd></div>
+        <div><dt>视角边界</dt><dd>这五张历史 PNG 不是转面图。新母版设计需要单独审定侧面和背面，不能从正面图镜像、拉伸或凭空标作历史原稿。</dd></div>
+      </dl>
+    </section>
+    <section class="differences" aria-labelledby="difference-title"><h2 id="difference-title">当前能看出的主要区别</h2><p>历史 PNG 有更厚的体积、柔软明暗、较大的黑眼与状态道具，像完整插画；当前 V5.5 正面 SVG 使用更扁平的线条、较小且可控的眼睛、一体圆弧身体和分层手脚，便于动画。二者的身份共通点是白色团子、双手双脚与头顶便签；差异是下一阶段绘制新母版时需要解决的美术选择，本页不替它作决定。</p></section>
+    <footer>只读对照页 · <a href="design-board.html">查看现有角色设定板</a> · <a href="../index.html">返回 Dodo App</a></footer>
+  </main>
+</body>
+</html>

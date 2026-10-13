@@ -1,0 +1,39 @@
+<svg class="xiaodai-svg" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="小待 front neutral" data-view="front" data-emotion="neutral" data-pose="stand">
+  <g class="xd-shadow" data-part="ground-shadow" data-anchor="128,241" transform="translate(128 241) scale(1 1) translate(-128 -241)"><ellipse cx="128" cy="241" rx="63" ry="7" fill="#c4d1cb" opacity=".52"/></g>
+  <g class="xd-root" data-part="root" transform="translate(0 0)">
+    <g class="xd-foot xd-foot-left" data-part="left-foot" data-anchor="91,225"><ellipse cx="91" cy="225" rx="21" ry="13" fill="#fffaf3" stroke="#dfe2dc" stroke-width="1.7"/></g>
+    <g class="xd-foot xd-foot-right" data-part="right-foot" data-anchor="165,225"><ellipse cx="165" cy="225" rx="21" ry="13" fill="#fffaf3" stroke="#dfe2dc" stroke-width="1.7"/></g>
+    <g class="xd-body" data-part="body" data-anchor="128,162" transform="translate(128 162) scale(1 1) translate(-128 -162)">
+      <path class="xd-body-shell" d="M128 91 C83 91 49 116 42 153 C35 182 46 206 70 217 C96 229 158 229 184 217 C208 206 221 181 214 153 C205 116 173 91 128 91 Z" fill="#fffaf3" stroke="#dfe2dc" stroke-width="1.9"/>
+      <path d="M65 193 C85 208 108 214 129 214 C155 214 179 208 194 193 C185 213 164 221 128 222 C92 222 75 214 65 193 Z" fill="#f0f0e8" opacity=".62"/>
+    </g>
+    <g class="xd-arm xd-arm-left" data-part="left-arm" data-anchor="62,164" transform="rotate(0 62 164)"><path d="M66 153 C47 151 34 159 29 174 C25 187 32 200 44 203 C57 206 70 197 76 184 C81 171 78 157 66 153 Z" fill="#fffaf3" stroke="#dfe2dc" stroke-width="1.8"/></g>
+    <g class="xd-arm xd-arm-right" data-part="right-arm" data-anchor="194,164" transform="rotate(0 194 164)"><path d="M190 153 C209 151 222 159 227 174 C231 187 224 200 212 203 C199 206 186 197 180 184 C175 171 178 157 190 153 Z" fill="#fffaf3" stroke="#dfe2dc" stroke-width="1.8"/></g>
+    <g class="xd-face" data-part="face" data-anchor="128,154">
+      <g class="xd-cheeks" fill="#f2c5bc" opacity=".58"><ellipse cx="87" cy="168" rx="10" ry="5"/><ellipse cx="169" cy="168" rx="10" ry="5"/></g>
+      <g class="xd-eye xd-eye-left" data-part="left-eye" data-anchor="105,150">
+        <defs><clipPath id="xd-eye-reference-left"><ellipse cx="105" cy="150" rx="11.0" ry="11"/></clipPath></defs>
+        <ellipse class="xd-eye-outline" cx="105" cy="150" rx="11.0" ry="11" fill="#fffefb" stroke="#dfe2dc" stroke-width="1.6"/>
+        <g clip-path="url(#xd-eye-reference-left)"><g class="xd-pupil xd-pupil-left" data-part="left-pupil" transform="translate(0 0)">
+          <circle cx="105" cy="151" r="6.4" fill="#203039"/><circle cx="102.9" cy="148" r="2.2" fill="#fff"/>
+        </g></g>
+        <path class="xd-eyelid xd-eyelid-left" data-part="left-eyelid" d="M92 137 Q105 133 118 137 L118 137 Q105 134 92 137 Z" fill="#fffaf3" opacity="0"/>
+      </g>
+      <g class="xd-eye xd-eye-right" data-part="right-eye" data-anchor="151,150">
+        <defs><clipPath id="xd-eye-reference-right"><ellipse cx="151" cy="150" rx="11.0" ry="11"/></clipPath></defs>
+        <ellipse class="xd-eye-outline" cx="151" cy="150" rx="11.0" ry="11" fill="#fffefb" stroke="#dfe2dc" stroke-width="1.6"/>
+        <g clip-path="url(#xd-eye-reference-right)"><g class="xd-pupil xd-pupil-right" data-part="right-pupil" transform="translate(0 0)">
+          <circle cx="151" cy="151" r="6.4" fill="#203039"/><circle cx="148.9" cy="148" r="2.2" fill="#fff"/>
+        </g></g>
+        <path class="xd-eyelid xd-eyelid-right" data-part="right-eyelid" d="M138 137 Q151 133 164 137 L164 137 Q151 134 138 137 Z" fill="#fffaf3" opacity="0"/>
+      </g>
+      <g class="xd-brows"></g>
+      <path class="xd-mouth" data-part="mouth" d="M117 176 Q128 186 139 176" fill="none" stroke="#203039" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g class="xd-note" data-part="note" data-anchor="128,97" transform="translate(0 0) rotate(0 128 97)">
+      <path d="M120 44 Q120 34 128 34 Q136 34 136 44" fill="#e7d8a4"/>
+      <g fill="#fff2c6" stroke="#e7d8a4" stroke-width="2"><path d="M89 51 Q89 44 97 44 H159 Q167 44 167 51 V92 Q167 100 159 100 H97 Q89 100 89 92 Z"/></g>
+      <g class="xd-note-glyph" fill="none" color="#369b70"><path d="M128 86 V72 M128 72 C118 60 108 62 110 71 C113 79 121 78 128 72 Z M128 72 C138 60 148 62 146 71 C143 79 135 78 128 72 Z" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+    </g>
+  </g>
+</svg>
